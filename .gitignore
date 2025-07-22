@@ -7,11 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Runtime & build files
 node_modules
 dist
 dist-ssr
 *.local
+
+# Environment files
 .env
+# Or use this instead to ignore all env files
+# .env*
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
