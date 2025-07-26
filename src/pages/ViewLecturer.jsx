@@ -66,12 +66,13 @@ const EmployeeList = () => {
                             <th className="text-left px-4 py-2 border-b whitespace-nowrap">Department</th>
                             <th className="text-left px-4 py-2 border-b whitespace-nowrap">Position</th>
                             <th className="text-left px-4 py-2 border-b whitespace-nowrap">Employment Type</th>
+                            <th className="text-left px-4 py-2 border-b whitespace-nowrap">End Date</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredEmployees.length === 0 ? (
                             <tr>
-                                <td colSpan="7" className="text-center py-4 text-gray-600">
+                                <td colSpan="8" className="text-center py-4 text-gray-600">
                                     No employees found.
                                 </td>
                             </tr>
@@ -91,6 +92,9 @@ const EmployeeList = () => {
                                     <td className="px-4 py-2 border-b whitespace-nowrap">{emp.position}</td>
                                     <td className="px-4 py-2 border-b whitespace-nowrap capitalize">
                                         {emp.employment_type?.replace('-', ' ')}
+                                    </td>
+                                    <td className="px-4 py-2 border-b whitespace-nowrap">
+                                        {emp.end_date ? new Date(emp.end_date).toLocaleDateString() : '—'}
                                     </td>
                                 </tr>
                             ))

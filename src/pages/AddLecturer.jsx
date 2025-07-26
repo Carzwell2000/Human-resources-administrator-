@@ -50,22 +50,28 @@ function AddUniversityWorkerForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const submissionData = {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            phone: formData.phone,
+            date_of_birth: formData.dateOfBirth,
+            gender: formData.gender,
+            employee_id: formData.employeeId,
+            department: formData.department,
+            position: formData.position,
+            start_date: formData.startDate,
+            employment_type: formData.employmentType,
+        };
+
+        if (formData.employmentType !== 'full-time') {
+            submissionData.end_date = formData.endDate || null;
+        }
+
         const { error } = await supabase
             .from('employees')
-            .insert([{
-                first_name: formData.firstName,
-                last_name: formData.lastName,
-                email: formData.email,
-                phone: formData.phone,
-                date_of_birth: formData.dateOfBirth,
-                gender: formData.gender,
-                employee_id: formData.employeeId,
-                department: formData.department,
-                position: formData.position,
-                start_date: formData.startDate,
-                end_date: formData.endDate || null,
-                employment_type: formData.employmentType,
-            }]);
+            .insert([submissionData]);
 
         if (error) {
             console.error('Insert failed:', error.message);
@@ -156,8 +162,14 @@ function AddUniversityWorkerForm() {
                             </div>
                             <div className="md:col-span-2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">End Date (optional)</label>
-                                <input type="date" name="endDate" value={formData.endDate} onChange={handleChange}
-                                    className="w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500" />
+                                <input
+                                    type="date"
+                                    name="endDate"
+                                    value={formData.endDate}
+                                    onChange={handleChange}
+                                    disabled={formData.employmentType === 'full-time'}
+                                    className={`w-full px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 ${formData.employmentType === 'full-time' ? 'bg-gray-100 cursor-not-allowed' : ''}`}
+                                />
                             </div>
                             <div className="md:col-span-2">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">Employment Type</label>
