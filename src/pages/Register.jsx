@@ -40,7 +40,7 @@ export default function Register() {
             if (displayName) {
                 await updateProfile(userCred.user, { displayName });
             }
-            navigate('/Login', { replace: true });
+            navigate('/dashboard', { replace: true });
         } catch (err) {
             console.error('Registration error', err);
             switch (err.code) {
