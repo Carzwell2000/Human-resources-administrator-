@@ -138,7 +138,6 @@ const ResignationListPage = () => {
                                 <p><strong>Employee ID:</strong> {resignation.employee_id}</p>
                                 {resignation.phone_number && <p><strong>Phone:</strong> {resignation.phone_number}</p>}
                                 {resignation.email && <p><strong>Email:</strong> {resignation.email}</p>}
-                                {resignation.user_id && <p><strong>User UID:</strong> <span className="text-gray-500 text-xs">{resignation.user_id}</span></p>}
                                 <p><strong>Gender:</strong> {resignation.gender}</p>
                                 <p><strong>Resignation Date:</strong> {resignation.resignation_date}</p>
                                 <p><strong>Last Day:</strong> {resignation.last_day}</p>
