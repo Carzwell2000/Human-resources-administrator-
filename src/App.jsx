@@ -23,6 +23,7 @@ import Approvedres from './resignation/Approvedres';
 import Resertpassword from './Components/Resertpassword';
 import Request from './Requestss/Request';
 import Appliedrequest from './Requestss/Appliedrequest';
+import Changepassword from "./Components/Changepassword";
 
 // Dummy auth check
 const isAuthenticated = () => !!localStorage.getItem('accessToken');
@@ -65,6 +66,8 @@ function App() {
                     <Route path="register" element={<Register />} />
                     <Route path="request" element={<Request />} />
                     <Route path="applied-request" element={<Appliedrequest />} />
+                    <Route path="change-password" element={<Changepassword />} />
+
 
 
                 </Route>

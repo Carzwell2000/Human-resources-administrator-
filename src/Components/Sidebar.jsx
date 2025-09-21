@@ -84,6 +84,16 @@ const Sidebar = () => {
                         Create Account
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/change-password"
+                        className={({ isActive }) =>
+                            `block py-2.5 px-4 rounded transition duration-200 ${isActive ? activeLinkClasses : normalLinkClasses}`
+                        }
+                    >
+                        Change password
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );

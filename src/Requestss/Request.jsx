@@ -85,7 +85,7 @@ const NewWorkerRequestForm = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
-                        placeholder="e.g. Computer Science"
+                        placeholder="Enter Department"
                     />
                 </div>
 
@@ -99,7 +99,7 @@ const NewWorkerRequestForm = () => {
                         required
                         min="1"
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
-                        placeholder="e.g. 2"
+                        placeholder="Enter number of workers"
                     />
                 </div>
 
@@ -112,7 +112,7 @@ const NewWorkerRequestForm = () => {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
-                        placeholder="e.g. Lecturer, Lab Technician"
+                        placeholder="Enter position"
                     />
                 </div>
 
